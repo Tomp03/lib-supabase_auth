@@ -3,7 +3,6 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 export function superbase(url, key) {
 
   const supabase = createClient(url, key);
-  console.log(supabase);
 
   async function signup(mail, pass) {
     let data  = await supabase.auth.signUp({
