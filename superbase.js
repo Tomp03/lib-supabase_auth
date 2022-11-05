@@ -4,19 +4,19 @@ export function superbase(url, key) {
 
   const supabase = createClient(url, key);
 
-  async function signup(mail, pass) {
+  async function signup(email, pass) {
     let data  = await supabase.auth.signUp({
-      email: mail,
+      email: email,
       password: pass,
     });
 
     return data ;
   }
 
-  async function login(email, password) {
+  async function login(email, pass) {
     let data = await supabase.auth.signInWithPassword({
       email: email,
-      password: password,
+      password: pass,
     });
 
     return data;
